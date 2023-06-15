@@ -1,9 +1,8 @@
-import html from "./index.html";
+import Handlebars from "handlebars";
+import source from "./index.handlebars";
 
-export default {
-  title: "index",
-};
+const template = Handlebars.compile(source);
+const html = template({ title: "Test" });
 
-export const Preview = () => {
-  return html;
-};
+export default { title: "index" };
+export const Preview = () => html;

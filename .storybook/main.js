@@ -10,6 +10,14 @@ const config = {
     name: "@storybook/html-webpack5",
     options: {},
   },
+  webpackFinal: async (config) => {
+    config.module?.rules?.push({
+      test: /\.handlebars$/,
+      loader: "raw-loader",
+    });
+    config.resolve.fallback.fs = false;
+    return config;
+  },
   docs: {
     autodocs: "tag",
   },
