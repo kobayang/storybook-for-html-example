@@ -13,7 +13,7 @@ const config = {
   webpackFinal: async (config) => {
     config.module?.rules?.push({
       test: /\.handlebars$/,
-      loader: "raw-loader",
+      loader: "handlebars-loader",
     });
     config.resolve.fallback.fs = false;
     return config;
