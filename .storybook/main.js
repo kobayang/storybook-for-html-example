@@ -1,11 +1,6 @@
 /** @type { import('@storybook/html-webpack5').StorybookConfig } */
 const config = {
-  stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-  ],
+  stories: ["../stories/**/*.stories.js"],
   framework: {
     name: "@storybook/html-webpack5",
     options: {},
@@ -17,9 +12,6 @@ const config = {
     });
     config.resolve.fallback.fs = false;
     return config;
-  },
-  docs: {
-    autodocs: "tag",
   },
 };
 export default config;
